@@ -2,23 +2,23 @@
 Body{
     margin: 0;
     padding: 0;
+    background-color: #080710;
     min-height: 100vh;
     display: flex;
-    align-items: center;
     justify-content: center;
-    background: #0B1522;
+    align-items: center;
 }
 
-Hear{
+.heart{
     height: 70px;
     width: 70px;
     background: #F20044;
     position: relative;
-    transform: rotate(-45deg);
     box-shadow: -10px 10px 90px #F20044;
-    animation: heart 0.6s linear infinite;
+    animation: animheart 0.6s linear infinite;
 }
-@key frames heart{
+
+@keyframes animheart{
     0%{
         transform: rotate(-45deg) scale(1.07);
     }
@@ -26,38 +26,28 @@ Hear{
         transform: rotate(-45deg) scale(1.0);
     }
     100%{
-        transform: rotate(-45deg) scale(08);
+        transform: rotate(-45deg) scale(0.8);
     }
 }
 
-.heart:before{
-    content: '';
-    position: absolute; 
-    height: 70px;
-    width: 70px;
-    background: #F20044;
-    top: -50%;
-    border-radius: 50%;
-    box-shadow: -10px 10px 90px #F20044;
-}
-.heart:after{
+.heart::before{
     content: '';
     position: absolute;
     height: 70px;
     will-change: 70px;
-    background: #F20044;
+    background-color: #F20044;
+    box-shadow: 10px -10px 90px #F20044;
     top: -50%;
     border-radius: 50%;
-    box-shadow: -10px 10px 90px #F20044;
 }
 
-h1{
-    color: #FFFFFFaliceblue;
-    text-align: center;
-    font-family: 'Times New Roman', times, Serif;
-    position: relative;
-    vertical-align: bottom;
-    bottom: -100px;
-    right: 100px;
-    font-style: oblique;
+.heart::after{
+    content: '';
+    position: absolute;
+    box-shadow: 10px -10px 90px #F20044;
+    height:70px;
+    width: 70px;
+    background-color: #F20044;
+    right: -50%;
+    border-radius: 50%;
 }
